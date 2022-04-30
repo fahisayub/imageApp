@@ -1,5 +1,5 @@
-let search=async(query)=>{
-    const url=`https://api.unsplash.com/search/photos/?query=${query}&per_page=20&client_id=i7qiH154sRGXr1YCA39OlNlFKQcn9ufkgnWmczWWxTw`;
+let search=async(query,sort,filter)=>{
+    const url=`https://api.unsplash.com/search/photos/?query=${query}&order_by=${sort}&orientation=${filter}&per_page=30&client_id=i7qiH154sRGXr1YCA39OlNlFKQcn9ufkgnWmczWWxTw`;
 
     try{
         let res=await fetch(url);

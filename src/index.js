@@ -5,7 +5,8 @@ import '../styles/navbar.css';
 import '../styles/index.css'
 
 
-
+let filter=document.getElementById('filter');
+let sort=document.getElementById('sort');
 let input= document.getElementById('query');
 input.addEventListener('input',searchfn);
 function searchfn(){
@@ -13,8 +14,9 @@ function searchfn(){
 }
 let main=async()=>{
   let query= input.value ;
-  console.log(query);
-    let data=await search(query);
+  let sortby=sort.value;
+  let filterby=filter.value;
+    let data=await search(query,sortby,filterby);
     if(data==undefined){
         return;
     };
@@ -36,9 +38,23 @@ for(let el of categories){
     
 }
 async function csfn (){
- let res = await search(`${this.id}`);
+    let sortby=sort.value;
+  let filterby=filter.value;
+ let res = await search(`${this.id}`,sortby,filterby);
     append(res);
 }
+filter.addEventListener('change',sortnfilt);
+sort.addEventListener('change',sortnfilt);
+function sortnfilt (){
+    if(input.value==undefined){
+       csfn();
+    }else{
+        main();
+    }
+}
+
+
+
 
 
 
