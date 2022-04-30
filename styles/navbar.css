@@ -1,0 +1,32 @@
+#categories{
+    display: flex;
+    justify-content: space-evenly;
+}
+#categories>a{
+    border: 1px solid black;
+    text-decoration: none;
+    border-color:rgb(184, 5, 215);
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+}
+#search{
+    width: 100%;
+    margin:auto;
+    padding: 10px;
+    text-align: center;
+}
+#query{
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    margin: auto;
+    border-color:rgb(188, 5, 221);
+
+}
+#navbar{
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+}
